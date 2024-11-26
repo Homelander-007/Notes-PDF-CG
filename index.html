@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes-PDF</title>
+    <link rel="shortcut icon"  href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>PDF Files</h2>
+        <ul>
+            <!-- Replace these with your actual file names -->
+            <li><a data-file="files/theory and problems of computer graphics-McGraw-Hill.pdf">theory and problems of computer graphics-McGraw-Hill</a></li>
+            <li><a data-file="files/Computer Graphics with OpenGL (4th ed_) [Hearn, Baker & Carithers 2013].pdf">Computer Graphics with OpenGL (4th ed_) [Hearn, Baker & Carithers 2013]</a></li>
+            <li><a data-file="files/Computer Graphics C Version by Donald Hearn & M Pauline Baker II Edition.pdf">Computer Graphics C Version by Donald Hearn & M Pauline Baker II Edition</a></li>
+        </ul>
+    </div>
+    <div class="preview">
+        <iframe id="pdfPreview" src=""></iframe>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('.sidebar a');
+        const preview = document.getElementById('pdfPreview');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const file = link.getAttribute('data-file');
+                preview.src = file;
+            });
+        });
+    </script>
+</body>
+</html>
